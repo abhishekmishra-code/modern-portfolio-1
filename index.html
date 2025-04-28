@@ -1,11 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link href="https://fonts.googleapis.com/css?family=Spartan:700,800,900" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
-    -->
     <link
       rel="icon"
       href="./assets/images/name-logo-favicon.svg"
@@ -14,12 +11,65 @@
     />
     <title>Modern Portfolio using Tailwind CSS</title>
     <link rel="stylesheet" href="./src/output.css" />
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      /* body {
+        background: #eee;
+        font-family:
+          Helvetica Neue,
+          Helvetica,
+          Arial,
+          sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      } */
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        /* background: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      } */
+    </style>
   </head>
-  <body class="bg-[#111] text-white font-['Nunito']">
-    <section class="flex flex-col justify-between h-screen">
-      <div id="wrapper-canvas" class="absolute inset-0 hidden md:block"></div>
+
+  <body class="scroll-smooth bg-[#111] font-['Nunito'] text-white">
+    <section class="flex h-screen flex-col justify-between">
+      <div
+        id="wrapper-canvas"
+        class="canvas absolute inset-0 hidden md:block"
+      ></div>
       <header
-        class="pointer-events-none z-10 flex justify-between px-4 mt-4 mx-auto max-w-7xl w-full"
+        class="pointer-events-none z-10 mx-auto mt-4 flex w-full max-w-7xl justify-between px-4"
       >
         <svg
           width="70"
@@ -34,7 +84,7 @@
             stroke-width="10"
           />
         </svg>
-        <div class="flex items-center gap-4 pointer-events-auto">
+        <div class="pointer-events-auto flex items-center gap-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -88,7 +138,9 @@
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
               ></path></svg
           ></a>
-          <a href="https://wa.me/+918750769905?text=Hi, How are you?" target="_blank"
+          <a
+            href="https://wa.me/+918750769905?text=Hi, How are you?"
+            target="_blank"
             ><svg
               aria-hidden="true"
               focusable="false"
@@ -108,10 +160,10 @@
           ></a>
         </div>
       </header>
-      <div class="flex relative pointer-events-none">
-        <div class="max-w-7xl w-full px-4 mx-auto -mt-10">
+      <div class="pointer-events-none relative flex">
+        <div class="mx-auto -mt-10 w-full max-w-7xl px-4">
           <svg
-            class="pointer-events-none absolute -z-0 inset-0 m-auto -translate-y- md:max-w-[650px] max-w-[450px]"
+            class="-translate-y- pointer-events-none absolute inset-0 -z-0 m-auto max-w-[450px] md:max-w-[650px]"
             viewBox="0 0 406 368"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -144,21 +196,21 @@
           <div class="relative">
             <div class="">
               <h1
-                class="md:text-6xl sm:text-5xl text-4xl font-['Spartan'] mr-14"
+                class="mr-14 font-['Spartan'] text-4xl sm:text-5xl md:text-6xl"
               >
                 Abhishek Mishra
               </h1>
-              <p class="font-['Merriweather'] italic mb-8 mt-6">
+              <p class="mt-6 mb-8 font-['Merriweather'] italic">
                 MERN Stack Developer
               </p>
             </div>
             <div class="pointer-events-auto">
               <button
-                class="relative bg-linear-to-l from-[#1595b6] to-[#1f2667e6] hover:scale-110 duration-100 ease-in-out py-2 px-5 rounded-sm cursor-pointer font-extrabold group"
+                class="group relative cursor-pointer rounded-sm bg-linear-to-l from-[#1595b6] to-[#1f2667e6] px-5 py-2 font-extrabold duration-100 ease-in-out hover:scale-110"
               >
                 About Me
                 <svg
-                  class="absolute top-1/2 -translate-y-1/2 -right-6 group-hover:-right-9 duration-100 ease-in-out"
+                  class="absolute top-1/2 -right-6 -translate-y-1/2 duration-100 ease-in-out group-hover:-right-9"
                   xmlns:dc="http://purl.org/dc/elements/1.1/"
                   xmlns:cc="http://creativecommons.org/ns#"
                   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -200,8 +252,10 @@
             </div>
           </div>
         </div>
-        <ul class="ml-auto -top-40 space-y-6 text-[#B0B2C3] absolute right-8 pointer-events-auto">
-          <li class="w-7 hover:text-white hover:scale-110 duration-110">
+        <ul
+          class="pointer-events-auto absolute -top-40 right-8 ml-auto space-y-6 text-[#B0B2C3]"
+        >
+          <li class="w-7 duration-110 hover:scale-110 hover:text-white">
             <a href="https://in.linkedin.com/" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
@@ -211,7 +265,7 @@
               </svg>
             </a>
           </li>
-          <li class="w-7 hover:text-white hover:scale-110 duration-110">
+          <li class="w-7 duration-110 hover:scale-110 hover:text-white">
             <a href="https://x.com/" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path
@@ -221,7 +275,7 @@
               </svg>
             </a>
           </li>
-          <li class="w-7 hover:text-white hover:scale-110 duration-110">
+          <li class="w-7 duration-110 hover:scale-110 hover:text-white">
             <a href="https://www.instagram.com/" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
@@ -231,7 +285,7 @@
               </svg>
             </a>
           </li>
-          <li class="w-7 hover:text-white hover:scale-110 duration-110">
+          <li class="w-7 duration-110 hover:scale-110 hover:text-white">
             <a href="mailto:abhishekmishra0101010@gmail.com">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path
@@ -241,8 +295,11 @@
               </svg>
             </a>
           </li>
-          <li class="w-7 hover:text-white hover:scale-110 duration-110">
-            <a href="https://github.com/abhishekmishra-code/modern-portfolio-1" target="_blank">
+          <li class="w-7 duration-110 hover:scale-110 hover:text-white">
+            <a
+              href="https://github.com/abhishekmishra-code/modern-portfolio-1"
+              target="_blank"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                 <path
                   fill="currentColor"
@@ -253,14 +310,14 @@
           </li>
         </ul>
       </div>
-      <div class="mb-10 self-center group z-10">
+      <div class="group z-10 mb-10 self-center">
         <button
-          class="text-xl bg-linear-to-l from-[#1595b6] to-[#1f2667e6] hover:scale-110 duration-100 ease-in-out py-2 px-5 rounded-md cursor-pointer font-extrabold group"
+          class="group cursor-pointer rounded-md bg-linear-to-l from-[#1595b6] to-[#1f2667e6] px-5 py-2 text-xl font-extrabold duration-100 ease-in-out hover:scale-110"
         >
           Latest Works
         </button>
         <svg
-          class="rotate-90 mt-1 mx-auto hover:translate-y-1 duration-110 group-hover:translate-y-2 ease-out"
+          class="mx-auto mt-1 rotate-90 duration-110 ease-out group-hover:translate-y-2 hover:translate-y-1"
           xmlns:dc="http://purl.org/dc/elements/1.1/"
           xmlns:cc="http://creativecommons.org/ns#"
           xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -300,13 +357,817 @@
         </svg>
       </div>
       <div
-        class="latest-works-arrow absolute bg-[#444] w-1 h-7 left-1/2 bottom-0 -translate-x-1/2"
+        class="latest-works-arrow absolute bottom-0 left-1/2 h-7 w-1 -translate-x-1/2 bg-[#444]"
       ></div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <section
+      id="latest-works"
+      class="relative mx-auto w-full max-w-[1440px] px-4"
+    >
+      <h2
+        class="relative z-10 mx-auto w-max border-b-2 border-b-[#1788ae] bg-[#111] px-4 py-3 text-center text-4xl font-bold"
+      >
+        Latest Works
+      </h2>
+
+      <div class="project">
+        <div class="connecting-line right-1/2 left-1/4"></div>
+
+        <div class="connecting-circle"></div>
+
+        <a
+          class="group relative order-1 flex w-full flex-col items-center duration-100 ease-in-out md:hover:scale-105"
+          href="https://www.harigurus.com/"
+          target="_blank"
+        >
+          <img
+            class="project-image"
+            src="https://anuragsinghbam.com/images/harigurus.webp"
+            alt="p1"
+          />
+
+          <span class="visit- weblink flex items-center gap-1 bg-[#fc815c]"
+            >Harigurus
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-external-link"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </a>
+
+        <div class="order-2 w-full">
+          <h3 class="text-4xl font-bold text-[#fd7114]">Harigurus</h3>
+
+          <span class="text-lg text-[#fd7114]">(Event Booking)</span>
+
+          <p class="mt-2 text-justify">
+            HariGurus is a one-stop-shop for all Hindu religious, customs and
+            traditional requirements. Built the complete site from scratch.
+          </p>
+
+          <ul class="technologies">
+            <li class="technology">#react.js</li>
+            <li class="technology">#express.js</li>
+            <li class="technology">#node.js</li>
+            <li class="technology">#swiper.js</li>
+            <li class="technology">#mongoDB</li>
+            <li class="technology">#mongoose</li>
+            <li class="technology">#css</li>
+            <li class="technology">#javascript</li>
+            <li class="technology">#figma</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="connecting-line right-1/4 left-1/2"></div>
+
+        <div class="connecting-circle"></div>
+
+        <div class="order-2 w-full md:order-1">
+          <h3 class="text-4xl font-bold text-[#fde678]">EazyGrad</h3>
+
+          <span class="text-lg text-[#fde678]">(EdTech Startup)</span>
+
+          <p class="mt-2 text-justify">
+            Being a lead developer, revamped the site to a highly responsive,
+            and interactive website. Created new features and pages. Worked as a
+            team with product manager and ux designer.
+          </p>
+
+          <ul class="technologies">
+            <li class="technology">#node.js</li>
+            <li class="technology">#express.js</li>
+            <li class="technology">#mongoDB</li>
+            <li class="technology">#mongoDBAtlas</li>
+            <li class="technology">#ejs</li>
+            <li class="technology">#swiper.js</li>
+            <li class="technology">#html</li>
+            <li class="technology">#css</li>
+            <li class="technology">#javascript</li>
+            <li class="technology">#lighthouse</li>
+            <li class="technology">#figma</li>
+          </ul>
+        </div>
+
+        <a
+          class="group relative order-1 flex w-full flex-col items-center duration-100 ease-in-out md:order-2 md:hover:scale-105"
+          href="https://www.harigurus.com/"
+          target="_blank"
+        >
+          <img
+            class="project-image"
+            src="https://anuragsinghbam.com/images/eazygrad.webp"
+            alt="p1"
+          />
+
+          <span class="visit- weblink flex items-center gap-1 bg-[#fc815c]"
+            >EazyGrad
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-external-link"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="project">
+        <div class="connecting-line right-1/2 left-1/4"></div>
+
+        <div class="connecting-circle"></div>
+
+        <a
+          class="group relative order-1 flex w-full flex-col items-center duration-100 ease-in-out md:hover:scale-105"
+          href="https://www.harigurus.com/"
+          target="_blank"
+        >
+          <img
+            class="project-image"
+            src="https://anuragsinghbam.com/images/web-dev-english.webp"
+            alt="p1"
+          />
+
+          <span class="visit- weblink flex items-center gap-1 bg-[#fc815c]"
+            >web Dev English
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-external-link"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </a>
+
+        <div class="order-2 w-full">
+          <h3 class="text-4xl font-bold text-[#27a79a]">Web Dev English</h3>
+
+          <span class="text-lg text-[#27a79a]">(Coaching and Consulting)</span>
+
+          <p class="mt-2 text-justify">
+            US-based English Coach's website for guiding techies. Improved
+            existing look and added new features and sections.
+          </p>
+
+          <ul class="technologies">
+            <li class="technology">#react.js</li>
+            <li class="technology">#express.js</li>
+            <li class="technology">#node.js</li>
+            <li class="technology">#swiper.js</li>
+            <li class="technology">#mongoDB</li>
+            <li class="technology">#mongoose</li>
+            <li class="technology">#css</li>
+            <li class="technology">#javascript</li>
+            <li class="technology">#figma</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="connecting-line right-1/4 left-1/2"></div>
+
+        <div class="connecting-circle"></div>
+
+        <div class="order-2 w-full md:order-1">
+          <h3 class="text-4xl font-bold text-[#00294f]">
+            Money Arjan Solutions
+          </h3>
+
+          <span class="text-lg text-[#00294f]"
+            >(Software Development Agency)</span
+          >
+
+          <p class="mt-2 text-justify">
+            Designed and developed the site from scratch. Used a combo of themes
+            and Figma to get the best results. Integrated contact form in the
+            website using Netlify.
+          </p>
+
+          <ul class="technologies">
+            <li class="technology">#node.js</li>
+            <li class="technology">#express.js</li>
+            <li class="technology">#mongoDB</li>
+            <li class="technology">#mongoDBAtlas</li>
+            <li class="technology">#ejs</li>
+            <li class="technology">#swiper.js</li>
+            <li class="technology">#html</li>
+            <li class="technology">#css</li>
+            <li class="technology">#javascript</li>
+            <li class="technology">#lighthouse</li>
+            <li class="technology">#figma</li>
+          </ul>
+        </div>
+
+        <a
+          class="group relative order-1 flex w-full flex-col items-center duration-100 ease-in-out md:order-2 md:hover:scale-105"
+          href="https://www.harigurus.com/"
+          target="_blank"
+        >
+          <img
+            class="project-image"
+            src="https://anuragsinghbam.com/images/money-arjan.webp"
+            alt="p1"
+          />
+
+          <span class="visit- weblink flex items-center gap-1 bg-[#fc815c]"
+            >Money Arjan
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-external-link"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="project">
+        <div class="connecting-line right-1/2 left-1/4"></div>
+
+        <div class="connecting-circle"></div>
+
+        <a
+          class="group relative order-1 flex w-full flex-col items-center duration-100 ease-in-out md:hover:scale-105"
+          href="https://www.harigurus.com/"
+          target="_blank"
+        >
+          <img
+            class="project-image"
+            src="https://anuragsinghbam.com/images/pioneer-digital.webp"
+            alt="p1"
+          />
+
+          <span class="visit- weblink flex items-center gap-1 bg-[#fc815c]"
+            >Pioneer Digital
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-external-link"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </a>
+
+        <div class="order-2 w-full">
+          <h3 class="text-4xl font-bold text-[#fd7114]">Pioneer Digital</h3>
+
+          <span class="text-lg text-[#fd7114]">(Digital Marketing Agency)</span>
+
+          <p class="mt-2 text-justify">
+            One of the featured site while working with TheBrandWick.com
+            (agency). Worked as a frontend developer to make the site
+            user-interactive and responsive.
+          </p>
+
+          <ul class="technologies">
+            <li class="technology">#react.js</li>
+            <li class="technology">#express.js</li>
+            <li class="technology">#node.js</li>
+            <li class="technology">#swiper.js</li>
+            <li class="technology">#mongoDB</li>
+            <li class="technology">#mongoose</li>
+            <li class="technology">#css</li>
+            <li class="technology">#javascript</li>
+            <li class="technology">#figma</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="connecting-line right-1/4 left-1/2"></div>
+
+        <div class="connecting-circle"></div>
+
+        <div class="order-2 w-full md:order-1">
+          <h3 class="text-4xl font-bold text-[#fde678]">Track My Expense</h3>
+
+          <span class="text-lg text-[#fde678]">(Finance)</span>
+
+          <p class="mt-2 text-justify">
+            Initially, made this WebApp to track my monthly expenditure.
+            Currently, with 10+ user base, I'm continuously working on improving
+            it following the feedback.
+          </p>
+
+          <ul class="technologies">
+            <li class="technology">#node.js</li>
+            <li class="technology">#express.js</li>
+            <li class="technology">#mongoDB</li>
+            <li class="technology">#mongoDBAtlas</li>
+            <li class="technology">#ejs</li>
+            <li class="technology">#swiper.js</li>
+            <li class="technology">#html</li>
+            <li class="technology">#css</li>
+            <li class="technology">#javascript</li>
+            <li class="technology">#lighthouse</li>
+            <li class="technology">#figma</li>
+          </ul>
+        </div>
+
+        <a
+          class="group relative order-1 flex w-full flex-col items-center duration-100 ease-in-out md:order-2 md:hover:scale-105"
+          href="https://www.harigurus.com/"
+          target="_blank"
+        >
+          <img
+            class="project-image"
+            src="https://anuragsinghbam.com/images/expense-tracker.webp"
+            alt="p1"
+          />
+
+          <span class="visit- weblink flex items-center gap-1 bg-[#fc815c]"
+            >Track My Expense
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-external-link"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="project">
+        <div class="connecting-line right-1/2 left-1/4"></div>
+
+        <div class="connecting-circle"></div>
+
+        <a
+          class="group relative order-1 flex w-full flex-col items-center duration-100 ease-in-out md:hover:scale-105"
+          href="https://www.harigurus.com/"
+          target="_blank"
+        >
+          <img
+            class="project-image"
+            src="https://anuragsinghbam.com/images/currency-converter.webp"
+            alt="p1"
+          />
+
+          <span class="visit- weblink flex items-center gap-1 bg-[#fc815c]"
+            >Currency Converter
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-external-link"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </a>
+
+        <div class="order-2 w-full">
+          <h3 class="text-4xl font-bold text-[#27a79a]">Currency Converter</h3>
+
+          <span class="text-lg text-[#27a79a]">(Productivity Tool)</span>
+
+          <p class="mt-2 text-justify">
+            I made this app when I started learning React. This app use an
+            external API to fetch live currency rates. An appealing currency
+            converter with a beautiful UI.
+          </p>
+
+          <ul class="technologies">
+            <li class="technology">#react.js</li>
+            <li class="technology">#express.js</li>
+            <li class="technology">#node.js</li>
+            <li class="technology">#swiper.js</li>
+            <li class="technology">#mongoDB</li>
+            <li class="technology">#mongoose</li>
+            <li class="technology">#css</li>
+            <li class="technology">#javascript</li>
+            <li class="technology">#figma</li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="absolute inset-0 left-1/2 hidden w-1 -translate-x-1/2 bg-[#1788ae] md:block"
+      ></div>
+    </section>
+
+    <section class="mx-auto w-full max-w-[1440px] pb-12">
+      <h2 class="section-heading">What my clients are saying?</h2>
+
+      <!-- Swiper -->
+      <div class="swiper mySwiper w-full max-w-5xl rounded-lg">
+        <div class="swiper-wrapper after:hidden">
+          <div class="swiper-slide">
+            <div class="swiper-card">
+              <div class="testimonial-image">
+                <img
+                  class="w-full"
+                  src="assets/images/saatvik.webp"
+                  alt="testimonial 3"
+                />
+              </div>
+              <div class="testimonial-text">
+                <p class="text-left text-sm md:text-lg">
+                  “Anurag is a talented, committed individual who will leave no
+                  stone unturned in his pursuit to provide with the best. His
+                  attention to detail and in-depth experience in the of web
+                  development is indeed commendable. He has exhibited exemplary
+                  skills in the field, and I hope to see all the great projects
+                  coming up!”
+                </p>
+                <h2 class="text-right text-2xl font-bold text-[#1788ae]">
+                  Saatvik Nagpal
+                </h2>
+                <h5 class="text-right text-sm font-bold text-[#1788ae]">
+                  Founder, EazyGrad
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-card">
+              <div class="testimonial-image">
+                <img
+                  class="w-full"
+                  src="assets/images/kira.webp"
+                  alt="testimonial 3"
+                />
+              </div>
+              <div class="testimonial-text">
+                <p class="text-left text-sm md:text-lg">
+                  “Anurag was a wonderful developer to work with! He anticipated
+                  everything I need to consider for my website. He also went the
+                  extra mile and added details that I hadn't considered! He is
+                  helping my business grow, and I will definitely work with him
+                  again!”
+                </p>
+                <h2 class="text-right text-2xl font-bold text-[#1788ae]">
+                  Kira Bragg
+                </h2>
+                <h5 class="text-right text-sm font-bold text-[#1788ae]">
+                  English Mentor
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-card">
+              <div class="testimonial-image">
+                <img
+                  class="w-full"
+                  src="assets/images/Srihari.webp"
+                  alt="testimonial 3"
+                />
+              </div>
+              <div class="testimonial-text">
+                <p class="text-left text-lg">
+                  “I worked with Anurag to make my website. I am speechless by
+                  looking at his work ethic and dedication. Working with him was
+                  the best decision I made.”
+                </p>
+                <h2 class="text-right text-2xl font-bold text-[#1788ae]">
+                  Srihari Kestur
+                </h2>
+                <h5 class="text-right text-sm font-bold text-[#1788ae]">
+                  Founder Harigurus
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-card">
+              <div class="testimonial-image">
+                <img
+                  class="w-full"
+                  src="https://anuragsinghbam.com/images/gautham.webp"
+                  alt="testimonial 3"
+                />
+              </div>
+              <div class="testimonial-text">
+                <p class="text-left text-lg">
+                  “I can bet that it's too hard to find professional developers
+                  like Anurag. He could peek inside my mind and made the site
+                  exactly as I wanted. Much appreciated”
+                </p>
+                <h2 class="text-right text-2xl font-bold text-[#1788ae]">
+                  Gautham Chengappa
+                </h2>
+                <h5 class="text-right text-sm font-bold text-[#1788ae]">
+                  Web Developer, UX Consultancy
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-[1440px] pb-12 sm:px-4">
+      <h2 class="section-heading">Let's connect</h2>
+
+      <div class="mt-5 flex flex-col items-center justify-center md:flex-row">
+        <div class="md:w-1/2">
+          <img
+            class="w-full"
+            src="./assets/images/contact-me.svg"
+            alt="form image"
+          />
+        </div>
+
+        <form class="w-full max-w-11/12 md:max-w-[460px]">
+          <label
+            for="name-icon"
+            class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+            >Name</label
+          >
+          <div class="relative mb-4">
+            <div
+              class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5"
+            >
+              <svg
+                class="h-4 w-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="name-icon"
+              class="block w-full rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 ps-10 text-sm text-gray-900 outline-none focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              placeholder="Name"
+            />
+          </div>
+
+          <label
+            for="email-address-icon"
+            class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+            >Your Email</label
+          >
+          <div class="relative mb-4">
+            <div
+              class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5"
+            >
+              <svg
+                class="h-4 w-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 16"
+              >
+                <path
+                  d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                />
+                <path
+                  d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="email-address-icon"
+              class="block w-full rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 ps-10 text-sm text-gray-900 outline-none focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              placeholder="name@email.com"
+            />
+          </div>
+
+          <label
+            for="message"
+            class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+            >Your message</label
+          >
+          <textarea
+            id="message"
+            rows="6"
+            class="mb-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            placeholder="Leave a comment..."
+          ></textarea>
+
+          <button
+            type="button"
+            class="me-2 mb-2 w-full cursor-pointer rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="flex flex-col items-center gap-4 px-4 pb-12">
+      <p class="mx-auto w-max text-xs text-[#999]">Abhishek Mishra © 2025</p>
+      <div class="black-logo">
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 406 368"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M314.899 203.5L314.899 349.43L162.5 209.053M314.899 203.5L283.037 203.586M314.899 203.5L337.881 203.586L381 171.109L314.899 171.109M162.5 209.053L118.044 170.96L157.5 171.109M162.5 209.053L65.5 301.465L20.5595 301.465L137.482 189.156M200.5 171.109L283.037 96.5L283.037 171.109M200.5 171.109L283.037 171.109M200.5 171.109L157.5 171.109M283.037 203.586L210.846 203.123L283.037 271.086L283.037 203.586ZM283.037 171.109L314.899 171.109M157.5 171.109L316.135 20.4322L314.899 171.109"
+            stroke="#1F2667"
+            stroke-opacity="0.9"
+            stroke-width="16"
+          ></path>
+          <path
+            d="M314.899 203.5L314.899 349.43L162.5 209.053M314.899 203.5L283.037 203.586M314.899 203.5L337.881 203.586L381 171.109L314.899 171.109M162.5 209.053L118.044 170.96L157.5 171.109M162.5 209.053L65.5 301.465L20.5595 301.465L137.482 189.156M200.5 171.109L283.037 96.5L283.037 171.109M200.5 171.109L283.037 171.109M200.5 171.109L157.5 171.109M283.037 203.586L210.846 203.123L283.037 271.086L283.037 203.586ZM283.037 171.109L314.899 171.109M157.5 171.109L316.135 20.4322L314.899 171.109"
+            stroke="url(#paint0_linear)"
+            stroke-width="16"
+          ></path>
+          <defs>
+            <linearGradient
+              id="paint0_linear"
+              x1="205.549"
+              y1="20.0169"
+              x2="204.338"
+              y2="342.461"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#1595B6"></stop>
+              <stop offset="1" stop-color="#1595B6" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <span>To Top</span>
+      </div>
+
+      <ul
+        class="flex flex-row flex-wrap items-center justify-center gap-12 text-[#1788ae]"
+      >
+        <li class="w-5 duration-110 hover:scale-120 hover:text-[#1788ae]">
+          <a href="https://in.linkedin.com/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                fill="currentColor"
+                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li class="w-5 duration-110 hover:scale-120 hover:text-[#1788ae]">
+          <a href="https://x.com/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                fill="currentColor"
+                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li class="w-5 duration-110 hover:scale-120 hover:text-[#1788ae]">
+          <a href="https://www.instagram.com/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                fill="currentColor"
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li class="w-5 duration-110 hover:scale-120 hover:text-[#1788ae]">
+          <a href="mailto:abhishekmishra0101010@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                fill="currentColor"
+                d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li class="w-5 duration-110 hover:scale-120 hover:text-[#1788ae]">
+          <a
+            href="https://github.com/abhishekmishra-code/modern-portfolio-1"
+            target="_blank"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+              <path
+                fill="currentColor"
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
     <script src="./matter.js" defer></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        cssMode: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
   </body>
 </html>
