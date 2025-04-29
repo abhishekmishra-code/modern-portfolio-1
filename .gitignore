@@ -1,0 +1,9 @@
+# Unused Folders
+assets/icons
+
+# Node Modules Files
+node_modules
+
+# .gitignore
+.prettierrc.json
+

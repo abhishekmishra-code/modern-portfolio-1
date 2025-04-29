@@ -200,14 +200,13 @@ function debounce(func, wait, immediate) {
 
 function setWindowSize() {
   let dimensions = {};
-  dimensions.width = $(window).width();
-  dimensions.height = $(window).height();
+  dimensions.width = window.innerWidth;
+  dimensions.height = window.innerHeight;
 
-  m.render.canvas.width = $(window).width();
-  m.render.canvas.height = $(window).height();
+  m.render.canvas.width = window.innerWidth;
+  m.render.canvas.height = window.innerHeight;
   return dimensions;
 }
 
 let m = runMatter();
 setWindowSize();
-$(window).resize(debounce(setWindowSize, 250));

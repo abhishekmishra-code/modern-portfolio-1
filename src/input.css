@@ -34,6 +34,14 @@ canvas {
   @apply z-10 w-full max-w-md drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)];
 }
 
+.swiper {
+  @apply w-full h-full
+}
+
+.swiper-slide {
+  @apply !flex items-center justify-center text-center text-lg
+}
+
 .swiper-card {
   @apply mx-6 my-8 flex w-full max-w-[640px] cursor-grab flex-col items-center justify-center rounded-lg p-5 shadow-[0_0px_50px_rgba(59,130,246,0.5)] drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)] sm:flex-row sm:gap-8 sm:p-7 md:mx-15 md:my-20 md:max-w-[800px] md:p-9;
 }
