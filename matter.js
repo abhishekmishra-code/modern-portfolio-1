@@ -1,3 +1,58 @@
+const sun = document.querySelector(".sun");
+const moon = document.querySelector(".moon");
+
+let color = [
+  "#6C4AB6", // Primary accent (soft violet)
+  "#E8E8E8", // Light neutral (soft gray)
+  "#FF9F9F", // Warm accent (peach)
+  "#A7C5EB", // Cool accent (sky blue)
+  "#4A4A4A", // Dark text/contrast
+  "#F5F5F5", // Off-white background
+  "#D3D3D3", // Medium neutral (silver)
+  "#FFF5E4", // Warm background (creamy white)
+];
+
+if (localStorage.getItem("theme") === "dark") {
+  color = [
+    `#000000`,
+    "#222222",
+    "#27292d",
+    "#444444",
+    "#111111",
+    "#334443",
+    "#191919",
+    "#e7e3d3",
+  ];
+}
+
+moon.addEventListener("click", (e) => {
+  color = [
+    `#000000`,
+    "#222222",
+    "#27292d",
+    "#444444",
+    "#111111",
+    "#334443",
+    "#191919",
+    "#e7e3d3",
+  ];
+  updateBodyColors();
+});
+
+sun.addEventListener("click", (e) => {
+  color = [
+    `#6d33a7`,
+    "#797575",
+    "#999999",
+    "#999999",
+    "#888888",
+    "#333333",
+    "#555555",
+    "#666666",
+  ];
+  updateBodyColors();
+});
+
 var canvas = document.querySelector("#wrapper-canvas");
 
 var dimensions = {
@@ -9,7 +64,6 @@ Matter.use("matter-attractors");
 Matter.use("matter-wrap");
 
 function runMatter() {
-  // module aliases
   var Engine = Matter.Engine,
     Events = Matter.Events,
     Runner = Matter.Runner,
@@ -22,15 +76,12 @@ function runMatter() {
     Composites = Matter.Composites,
     Bodies = Matter.Bodies;
 
-  // create engine
-  var engine = Engine.create();
-
+  var engine = Matter.Engine.create();
   engine.world.gravity.y = 0;
   engine.world.gravity.x = 0;
   engine.world.gravity.scale = 0.1;
 
-  // create renderer
-  var render = Render.create({
+  var render = Matter.Render.create({
     element: canvas,
     engine: engine,
     options: {
@@ -42,29 +93,22 @@ function runMatter() {
     },
   });
 
-  // create runner
-  var runner = Runner.create();
-
-  // Runner.run(runner, engine);
-  // Render.run(render);
-
-  // create demo scene
+  var runner = Matter.Runner.create();
   var world = engine.world;
   world.gravity.scale = 0;
 
-  // create a body with an attractor
   var attractiveBody = Bodies.circle(
     render.options.width / 2,
     render.options.height / 2,
     Math.max(dimensions.width / 25, dimensions.height / 25) / 2,
     {
       render: {
-        fillStyle: `#000`,
-        strokeStyle: `#000`,
+        fillStyle: color[0],
+        strokeStyle: color[0],
         lineWidth: 0,
       },
-
       isStatic: true,
+      colorData: { fill: 0, stroke: 0 },
       plugin: {
         attractors: [
           function (bodyA, bodyB) {
@@ -75,93 +119,85 @@ function runMatter() {
           },
         ],
       },
-    }
+    },
   );
 
   World.add(world, attractiveBody);
 
-  // add some bodies that to be attracted
   for (var i = 0; i < 60; i += 1) {
     let x = Common.random(0, render.options.width);
     let y = Common.random(0, render.options.height);
     let s =
       Common.random() > 0.6 ? Common.random(10, 80) : Common.random(4, 60);
     let poligonNumber = Common.random(3, 6);
-    var body = Bodies.polygon(
-      x,
-      y,
-      poligonNumber,
-      s,
 
-      {
-        mass: s / 20,
-        friction: 0,
-        frictionAir: 0.02,
-        angle: Math.round(Math.random() * 360),
-        render: {
-          fillStyle: "#222222",
-          strokeStyle: `#000000`,
-          lineWidth: 2,
-        },
-      }
-    );
-
+    var body = Bodies.polygon(x, y, poligonNumber, s, {
+      mass: s / 20,
+      friction: 0,
+      frictionAir: 0.02,
+      angle: Math.round(Math.random() * 360),
+      render: {
+        fillStyle: color[1],
+        strokeStyle: color[0],
+        lineWidth: 2,
+      },
+      colorData: { fill: 1, stroke: 0 },
+    });
     World.add(world, body);
 
     let r = Common.random(0, 1);
-    var circle = Bodies.circle(x, y, Common.random(2, 8), {
+    let fillIndex1 = r > 0.3 ? 2 : 3;
+    var circle1 = Bodies.circle(x, y, Common.random(2, 8), {
       mass: 0.1,
       friction: 0,
       frictionAir: 0.01,
       render: {
-        fillStyle: r > 0.3 ? `#27292d` : `#444444`,
-        strokeStyle: `#000000`,
+        fillStyle: color[fillIndex1],
+        strokeStyle: color[0],
         lineWidth: 2,
       },
+      colorData: { fill: fillIndex1, stroke: 0 },
     });
+    World.add(world, circle1);
 
-    World.add(world, circle);
-
-    var circle = Bodies.circle(x, y, Common.random(2, 20), {
+    let fillIndex2 = r > 0.3 ? 5 : 1;
+    var circle2 = Bodies.circle(x, y, Common.random(2, 20), {
       mass: 6,
       friction: 0,
       frictionAir: 0,
       render: {
-        fillStyle: r > 0.3 ? `#334443` : `#222222`,
-        strokeStyle: `#111111`,
+        fillStyle: color[fillIndex2],
+        strokeStyle: color[4],
         lineWidth: 4,
       },
+      colorData: { fill: fillIndex2, stroke: 4 },
     });
+    World.add(world, circle2);
 
-    World.add(world, circle);
-
-    var circle = Bodies.circle(x, y, Common.random(2, 30), {
+    var circle3 = Bodies.circle(x, y, Common.random(2, 30), {
       mass: 0.2,
       friction: 0.6,
       frictionAir: 0.8,
       render: {
-        fillStyle: `#191919`,
-        strokeStyle: `#111111`,
+        fillStyle: color[6],
+        strokeStyle: color[4],
         lineWidth: 3,
       },
+      colorData: { fill: 6, stroke: 4 },
     });
-
-    World.add(world, circle);
+    World.add(world, circle3);
   }
 
-  // add mouse control
-  var mouse = Mouse.create(render.canvas);
+  var mouse = Matter.Mouse.create(render.canvas);
 
-  Events.on(engine, "afterUpdate", function () {
+  Matter.Events.on(engine, "afterUpdate", function () {
     if (!mouse.position.x) return;
-    // smoothly move the attractor body towards the mouse
-    Body.translate(attractiveBody, {
+    Matter.Body.translate(attractiveBody, {
       x: (mouse.position.x - attractiveBody.position.x) * 0.12,
       y: (mouse.position.y - attractiveBody.position.y) * 0.12,
     });
   });
 
-  // return a context for MatterDemo to control
   let data = {
     engine: engine,
     runner: runner,
@@ -180,6 +216,16 @@ function runMatter() {
   Matter.Runner.run(runner, engine);
   Matter.Render.run(render);
   return data;
+}
+
+function updateBodyColors() {
+  let bodies = Matter.Composite.allBodies(m.engine.world);
+  for (let body of bodies) {
+    if (body.colorData) {
+      body.render.fillStyle = color[body.colorData.fill];
+      body.render.strokeStyle = color[body.colorData.stroke];
+    }
+  }
 }
 
 function debounce(func, wait, immediate) {
@@ -202,7 +248,6 @@ function setWindowSize() {
   let dimensions = {};
   dimensions.width = window.innerWidth;
   dimensions.height = window.innerHeight;
-
   m.render.canvas.width = window.innerWidth;
   m.render.canvas.height = window.innerHeight;
   return dimensions;
@@ -210,3 +255,5 @@ function setWindowSize() {
 
 let m = runMatter();
 setWindowSize();
+
+window.addEventListener("resize", debounce(setWindowSize, 250));
