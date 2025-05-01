@@ -41,14 +41,14 @@ moon.addEventListener("click", (e) => {
 
 sun.addEventListener("click", (e) => {
   color = [
-    `#6d33a7`,
-    "#797575",
-    "#999999",
-    "#999999",
-    "#888888",
-    "#333333",
-    "#555555",
-    "#666666",
+    "#6C4AB6", // Primary accent (soft violet)
+    "#E8E8E8", // Light neutral (soft gray)
+    "#FF9F9F", // Warm accent (peach)
+    "#A7C5EB", // Cool accent (sky blue)
+    "#4A4A4A", // Dark text/contrast
+    "#F5F5F5", // Off-white background
+    "#D3D3D3", // Medium neutral (silver)
+    "#FFF5E4", // Warm background (creamy white)
   ];
   updateBodyColors();
 });
