@@ -29,7 +29,7 @@ canvas {
 }
 
 .technology {
-  @apply rounded-full border dark:bg-gray-900 bg-gray-100 px-3 py-1;
+  @apply rounded-full border border-[#444] dark:bg-[#191919] bg-gray-100 px-3 py-1;
 }
 
 .connecting-line {
